@@ -99,51 +99,53 @@ export default function OperationsTabs() {
   const activeData = sections.find((s) => s.id === active);
 
   return (
-    <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-left mb-10">
-          <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[#5D1F73]">
+          <h1 className="mb-4 text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight text-[#5D1F73]">
             Simplify Modern Facility Operations
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl">
             A complete suite of intelligent tools designed to modernize your facility operations. From work orders to analytics, streamline processes, enhance efficiency, and gain real-time insights.
             <br /><br />
-            <span className="font-bold text-base sm:text-lg md:text-xl text-gray-600">
+            <span className="font-bold text-sm sm:text-base md:text-lg text-gray-600">
               All in one powerful platform!
             </span>
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex overflow-x-auto sm:flex-wrap gap-3 sm:gap-4 mb-10 pb-2 sm:pb-0 no-scrollbar">
+        <div className="flex overflow-x-auto sm:flex-wrap gap-3 sm:gap-4 mb-8 pb-2 no-scrollbar">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => setActive(section.id)}
               className={`flex items-center flex-shrink-0 gap-2 px-4 sm:px-5 py-2 text-sm sm:text-base rounded-lg font-medium transition-all duration-300
                 ${active === section.id
-                  ? "bg-gradient-to-r from-[#5D1F73] to-[#1ABC9C] text-white shadow-lg"
+                  ? "bg-gradient-to-r from-[#5D1F73] to-[#1ABC9C] text-white shadow-md"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
             >
               {section.icon}
-              {section.title}
+              <span className="whitespace-nowrap">{section.title}</span>
             </button>
           ))}
         </div>
 
         {/* Content + Image */}
-        <div className="mt-12">
+        <div className="mt-10">
           <div
-            className={`grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-xl shadow-lg overflow-hidden transition-all duration-500 ease-in-out`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-xl shadow-md overflow-hidden transition-all duration-500 ease-in-out`}
           >
             {/* Left Side - Text + Bullets */}
             <div
               className={`flex flex-col justify-center p-6 sm:p-8 bg-[#f3ebf5] transition-all duration-500 ease-in-out ${fade ? "opacity-0 -translate-x-5" : "opacity-100 translate-x-0"
                 }`}
             >
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#5D1F73] mb-4">{activeData.title}</h3>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#5D1F73] mb-4">
+                {activeData.title}
+              </h3>
               <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed mb-4">
                 {activeData.content}
               </p>
@@ -164,7 +166,7 @@ export default function OperationsTabs() {
               <img
                 src={activeData.img}
                 alt={activeData.title}
-                className="w-full h-auto max-h-[400px] object-contain p-4 sm:p-6"
+                className="w-full h-auto max-h-[350px] sm:max-h-[400px] object-contain p-4 sm:p-6"
               />
             </div>
           </div>
