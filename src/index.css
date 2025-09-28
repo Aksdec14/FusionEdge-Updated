@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 250s linear infinite;
+}
+
+.pause-animation:hover {
+  animation-play-state: paused;
+}
