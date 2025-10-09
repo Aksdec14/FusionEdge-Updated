@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useState } from "react";
 import icon from '../assets/Icons/For-Social-Media.png';
 import { Link } from 'react-router-dom';
